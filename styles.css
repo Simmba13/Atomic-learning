@@ -1,0 +1,322 @@
+/* Base styles */
+:root {
+    --primary-color: #00b8d4;
+    --primary-dark: #0088a3;
+    --primary-light: #62ebff;
+    --text-color: #333;
+    --background-color: #e0f7fa;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.5;
+    color: var(--text-color);
+    margin: 0;
+    background-color: var(--background-color);
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.min-h-screen {
+    min-height: 100vh;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Header styles */
+.header {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo- {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.logo-img {
+    height: 50px; /* Adjust the height as needed */
+    width: auto; /* Maintain the aspect ratio */
+    display: inline-block; /* Ensures proper alignment */
+}
+
+.main-nav {
+    margin-left: auto;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+/* Button styles */
+.btn {
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn-lg {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+}
+
+/* Hero section styles */
+.hero {
+    background-color: var(--primary-light);
+    padding: 3rem 0;
+}
+
+.hero-title {
+    font-size: 2.25rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: var(--primary-dark);
+}
+
+.hero-description {
+    font-size: 1.125rem;
+    color: var(--text-color);
+    max-width: 700px;
+    margin: 0 auto 2rem;
+}
+
+.search-container {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.search-form {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.search-input {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 0.25rem;
+}
+
+.search-btn {
+    padding: 0.5rem;
+}
+
+/* Study tools section styles */
+.study-tools {
+    padding: 3rem 0;
+    background-color: white;
+}
+
+.section-title {
+    font-size: 2.25rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--primary-dark);
+}
+
+.card-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.card {
+    border: 1px solid var(--primary-light);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background-color: white;
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 4px 6px rgba(0, 184, 212, 0.1);
+}
+
+.card-header {
+    padding: 1rem;
+    background-color: var(--primary-light);
+}
+
+.card-title {
+    font-size: 1.125rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    color: var(--primary-dark);
+}
+
+.card-content {
+    padding: 1rem;
+}
+
+.card-content p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--text-color);
+}
+
+/* Popular subjects section styles */
+.popular-subjects {
+    background-color: var(--background-color);
+    padding: 3rem 0;
+}
+
+.subject-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.subject-btn {
+    height: 5rem;
+    font-size: 1.125rem;
+    font-weight: 500;
+    background-color: white;
+    border: 1px solid var(--primary-color);
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: var(--primary-color);
+}
+
+.subject-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Create materials section styles */
+.create-materials {
+    padding: 3rem 0;
+    background-color: white;
+}
+
+.section-description {
+    font-size: 1.125rem;
+    color: var(--text-color);
+    max-width: 700px;
+    margin: 0 auto 2rem;
+}
+
+/* Footer styles */
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.5rem;
+    background-color: var(--primary-dark);
+    color: white;
+}
+
+.copyright {
+    font-size: 0.75rem;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-link {
+    font-size: 0.75rem;
+    color: white;
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive styles */
+@media (min-width: 640px) {
+    .footer {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 768px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .section-title {
+        font-size: 3rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-title {
+        font-size: 3.75rem;
+    }
+}
+
+/* Utility classes */
+.icon {
+    margin-right: 0.5rem;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}

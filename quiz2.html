@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atomic Structure Basics Quiz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #e0f7fa;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #00acc1;
+            color: white;
+        }
+
+        .quiz-details {
+            text-align: right;
+        }
+
+        h1 {
+            text-align: center;
+            color: #006064;
+            margin-bottom: 20px;
+        }
+
+        .question {
+            margin-bottom: 30px;
+            background-color: #f0f4f6;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        h2 {
+            color: #00838f;
+            margin-bottom: 10px;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            cursor: pointer;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        label:hover {
+            background-color: #e0f7fa;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #00acc1;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #0288d1;
+        }
+
+        .feedback {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .correct {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .incorrect {
+            background-color: #ffebee;
+            color: #c62828;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-atom"></i> Atomic Reading
+            </div>
+            <div class="quiz-details">
+                <span id="quiz-name">Atomic Structure Basics</span>
+                <br>
+                <span id="quiz-category">Chemistry</span>
+            </div>
+        </header>
+
+        <form id="quiz-form">
+            <div class="question">
+                <h2>What is Charlie the Chicken’s group’s favourite game?</h2>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q1" value="a">
+                        Pirates and Soldiers
+                    </label>
+                    <label>
+                        <input type="radio" name="q1" value="b">
+                        Building Forts
+                    </label>
+                    <label>
+                        <input type="radio" name="q1" value="c">
+                        Elves and Wizards
+                    </label>
+                </div>
+            </div>
+            
+            <div class="question">
+                <h2>Why did Charlie stay behind while his friends got more sticks?</h2>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q2" value="a">
+                        Because he was tired
+                    </label>
+                    <label>
+                        <input type="radio" name="q2" value="b">
+                        Because he was angry at his friends
+                    </label>
+                    <label>
+                        <input type="radio" name="q2" value="c">
+                        Because he was guarding the fort
+                    </label>
+                </div>
+            </div>
+            
+            <div class="question">
+                <h2>Can you describe the ladybug</h2>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q3" value="a">
+                        Red wings with dark black spots on its back
+                    </label>
+                    <label>
+                        <input type="radio" name="q3" value="b">
+                        Black wings and green spots
+                    </label>
+                    <label>
+                        <input type="radio" name="q3" value="c">
+                        Red and yellow striped
+                    </label>
+                </div>
+            </div>
+            
+            <div class="question">
+                <h2>How do you think Charlie felt when the fort fell down?</h2>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q4" value="a">
+                        Angry
+                    </label>
+                    <label>
+                        <input type="radio" name="q4" value="b">
+                        Happy
+                    </label>
+                    <label>
+                        <input type="radio" name="q4" value="c">
+                        sad
+                    </label>
+                </div>
+            </div>
+            
+            <div class="question">
+                <h2> What was Charlie’s idea after the fort fell down?</h2>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q5" value="a">
+                        To use it as a home for the ladybu
+                    </label>
+                    <label>
+                        <input type="radio" name="q5" value="b">
+                        To give it to Rosie the Rabbit
+                    </label>
+                    <label>
+                        <input type="radio" name="q5" value="c">
+                        To go home
+                    </label>
+                </div>
+            </div>
+            
+            <button type="submit">Submit Quiz</button>
+        </form>
+
+        <div id="results" style="display: none;">
+            <h2>Quiz Results</h2>
+            <p id="score-text"></p>
+            <div id="feedback"></div>
+        </div>
+    </div>
+
+    <script>
+        // Correct answers
+        const correctAnswers = {
+            'q1': 'b',
+            'q2': 'c',
+            'q3': 'a',
+            'q4': 'c',
+            'q5': 'a'
+        };
+
+        // Retrieve and set quiz title and category from localStorage
+        document.addEventListener('DOMContentLoaded', () => {
+            const quizTitle = localStorage.getItem('quizTitle') || 'Atomic Structure Basics';
+            const quizCategory = localStorage.getItem('quizCategory') || 'Chemistry';
+            
+            document.getElementById('quiz-name').textContent = quizTitle;
+            document.getElementById('quiz-category').textContent = quizCategory;
+        });
+
+        document.getElementById('quiz-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            let score = 0;
+            let feedback = [];
+            
+            // Check each question
+            for (let i = 1; i <= 5; i++) {
+                const questionKey = `q${i}`;
+                const selectedAnswer = document.querySelector(`input[name="${questionKey}"]:checked`);
+                
+                if (!selectedAnswer) {
+                    alert('Please answer all questions!');
+                    return;
+                }
+                
+                if (selectedAnswer.value === correctAnswers[questionKey]) {
+                    score++;
+                    feedback.push({
+                        question: document.querySelector(`input[name="${questionKey}"]`).closest('.question').querySelector('h2').textContent,
+                        isCorrect: true
+                    });
+                } else {
+                    feedback.push({
+                        question: document.querySelector(`input[name="${questionKey}"]`).closest('.question').querySelector('h2').textContent,
+                        isCorrect: false
+                    });
+                }
+            }
+            
+            // Display results
+            const resultsDiv = document.getElementById('results');
+            const scoreText = document.getElementById('score-text');
+            const feedbackDiv = document.getElementById('feedback');
+            
+            scoreText.textContent = `You scored ${score} out of 5`;
+            
+            // Clear previous feedback
+            feedbackDiv.innerHTML = '';
+            
+            // Show detailed feedback
+            feedback.forEach(item => {
+                const feedbackItem = document.createElement('div');
+                feedbackItem.classList.add('feedback', item.isCorrect ? 'correct' : 'incorrect');
+                feedbackItem.textContent = `${item.question}: ${item.isCorrect ? 'Correct' : 'Incorrect'}`;
+                feedbackDiv.appendChild(feedbackItem);
+            });
+            
+            // Hide quiz form, show results
+            document.getElementById('quiz-form').style.display = 'none';
+            resultsDiv.style.display = 'block';
+        });
+    </script>
+</body>
+</html>

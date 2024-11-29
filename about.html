@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - ReadNLearn</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background-color: #00FFFF;
+            color: #333;
+            padding: 1rem 0;
+        }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header a {
+            color: #333;
+            text-decoration: none;
+        }
+        nav a {
+            margin-left: 1rem;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .hero {
+            background-color: #E0FFFF;
+            padding: 5rem 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #00FFFF;
+            color: #333;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .features {
+            padding: 4rem 0;
+        }
+        .features h2, .why-choose h2, .join h2, .newsletter h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .feature {
+            text-align: center;
+        }
+        .feature-icon {
+            font-size: 3rem;
+            color: #00FFFF;
+            margin-bottom: 1rem;
+        }
+        .why-choose {
+            background-color: #E0FFFF;
+            padding: 4rem 0;
+        }
+        .why-choose-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .join {
+            padding: 4rem 0;
+            text-align: center;
+        }
+        .newsletter {
+            background-color: #E0FFFF;
+            padding: 4rem 0;
+        }
+        .newsletter form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .newsletter input[type="email"] {
+            flex-grow: 1;
+            padding: 0.5rem;
+            font-size: 1rem;
+        }
+        footer {
+            background-color: #00FFFF;
+            color: #333;
+            padding: 2rem 0;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        .footer-section h3 {
+            margin-bottom: 1rem;
+        }
+        .footer-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+        .footer-section a {
+            color: #333;
+            text-decoration: none;
+        }
+        .footer-section a:hover {
+            text-decoration: underline;
+        }
+        .social-icons {
+            font-size: 1.5rem;
+        }
+        .social-icons a {
+            margin-right: 1rem;
+        }
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo">Atomic Reading</a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="quizes.html">Quizes</a>
+                <a href="account.html">Account</a>
+                <a href="about.html"><strong>About</strong></a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>About ReadNLearn</h1>
+                <p> Atomic reading is a social enterprise aimed at improving reading for children ages 4-11. Our
+                    business provides reading packs for children as well as access to materials such as quizzes
+                    online provided on this website. Atomic reading is about encouraging readers to go further
+                    and beyond with these books and extracts which are in their age and level range based on
+                    oxford reading levels but we also challenge students by adding new vocabulary in to improve
+                    their learning further outside of classes.</p>
+                <a href="#" class="btn">Get Started</a>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2>Our Mission</h2>
+                <div class="feature-grid">
+                    <div class="feature">
+                        <div class="feature-icon">📚</div>
+                        <h3>Accessible Learning</h3>
+                        <p>Making education accessible to everyone, anywhere, anytime.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">👥</div>
+                        <h3>Community Driven</h3>
+                        <p>Building a global community of learners and educators.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Innovative Tools</h3>
+                        <p>Developing cutting-edge study tools for effective learning.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="why-choose">
+            <div class="container">
+                <h2>Why Choose ReadNLearn?</h2>
+                <div class="why-choose-grid">
+                    <div>
+                        <h3>Personalized Learning Experience</h3>
+                        <p>Our adaptive learning technology tailors study materials to your individual needs, helping you learn more efficiently.</p>
+                        <ul>
+                            <li>Smart flashcards that adapt to your progress</li>
+                            <li>Personalized study plans based on your goals</li>
+                            <li>Real-time feedback to improve your learning</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3> Business aims:</h3>
+                        <p>Access a wide range of study sets created by students and educators from around the world.</p>
+                        <ul>
+                            <li>Spark a love for reading at an early age
+                            </li>
+                            <li>To make an impact on young kids that will help them later on in their educational
+                                journey</li>
+                            <li>To raise awareness on the topics that motivated us to start this business; illiteracy
+                                rates and supporting children with dyslexia</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="join">
+            <div class="container">
+                <h2>Join Our Global Learning Community</h2>
+                <p>Start your learning journey with ReadNLearn today and connect with millions of learners worldwide.</p>
+                <a href="#" class="btn">Sign Up for Free</a>
+            </div>
+        </section>
+
+        <section class="newsletter">
+            <div class="container">
+                <h2>Stay Connected</h2>
+                
+                <form>
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>ReadNLearn</h3>
+                    <p>Empowering learners worldwide with innovative study tools.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/features">Features</a></li>
+                        <li><a href="/pricing">Pricing</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="/help">Help Center</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                        <li><a href="/privacy">Privacy Policy</a></li>
+                        <li><a href="/terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Website">🌐</a>
+                        <a href="#" aria-label="Email">📧</a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 ReadNLearn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
