@@ -46,12 +46,11 @@ body {
     background-color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
-.logo- {
+.logo {
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: var(--primary-color);
+    color: var(--primary-color); /* Consistent color across the logo */
     font-weight: bold;
     font-size: 1.25rem;
 }
@@ -62,6 +61,12 @@ body {
     display: inline-block; /* Ensures proper alignment */
 }
 
+.logo-text {
+    font-size: 20px; /* Adjust as needed */
+    color: #00bbff; /* Change color as desired */
+    margin-left: 10px; /* Space between the logo and text */
+    font-weight: bold;
+}
 .main-nav {
     margin-left: auto;
     display: flex;
