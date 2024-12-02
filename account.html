@@ -79,6 +79,7 @@
         }
         .form-group {
             margin-bottom: 1rem;
+            position: relative;
         }
         label {
             display: block;
@@ -95,6 +96,28 @@
             border: 1px solid #d1d5db;
             border-radius: 0.25rem;
         }
+        input:invalid {
+            border-color: #dc2626;
+        }
+        .error-message {
+            color: #dc2626;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+        .form-message {
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+        }
+        .form-message.success {
+            background-color: #d1fae5;
+            color: #065f46;
+        }
+        .form-message.error {
+            background-color: #fee2e2;
+            color: #991b1b;
+        }
         .btn {
             display: inline-block;
             padding: 0.5rem 1rem;
@@ -106,6 +129,10 @@
         }
         .btn:hover {
             background-color: #1d4ed8;
+        }
+        .btn:disabled {
+            background-color: #93c5fd;
+            cursor: not-allowed;
         }
         .tabs {
             display: flex;
@@ -165,15 +192,6 @@
         input:checked + .slider:before {
             transform: translateX(26px);
         }
-        .linked-account {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.5rem;
-            background-color: #f3f4f6;
-            border-radius: 0.25rem;
-            margin-bottom: 0.5rem;
-        }
         .grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -204,7 +222,7 @@
                 <input type="checkbox" id="account-type">
                 <span class="slider"></span>
             </label>
-            <span style="margin-left: 0.5rem;">Student Account</span>
+            <span id="account-type-label" style="margin-left: 0.5rem;">Student Account</span>
         </div>
 
         <div class="tabs">
@@ -221,128 +239,40 @@
                     <p class="card-description">Update your personal details here.</p>
                 </div>
                 <div class="card-content">
-                    <form>
+                    <form id="personal-info-form" name="submit-to-google-sheet" novalidate>
                         <div class="grid">
                             <div class="form-group">
                                 <label for="first-name">First Name</label>
-                                <input type="text" id="first-name" placeholder="John">
+                                <input type="text" id="first-name" name="First Name" placeholder="John" required minlength="2" maxlength="50">
+                                <div class="error-message"></div>
                             </div>
                             <div class="form-group">
                                 <label for="last-name">Last Name</label>
-                                <input type="text" id="last-name" placeholder="Doe">
+                                <input type="text" id="last-name" name="Last Name" placeholder="Doe" required minlength="2" maxlength="50">
+                                <div class="error-message"></div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="date-of-birth">Date of Birth</label>
-                            <input type="date" id="date-of-birth">
+                            <input type="date" id="date-of-birth" name="Date of Birth" required>
+                            <div class="error-message"></div>
                         </div>
                         <div class="form-group">
                             <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" placeholder="+1 (555) 000-0000">
+                            <input type="tel" id="phone" name="Phone" placeholder="+1 (555) 000-0000" 
+                                   pattern="^\+?[1-9]\d{1,14}$" required>
+                            <div class="error-message"></div>
                         </div>
-                        <button type="submit" class="btn">Save Changes</button>
+                        <div id="form-submission-message" class="form-message"></div>
+                        <button type="submit" class="btn">Submit</button>
                     </form>
-                </div>
-            </div>
-        </div>
-
-        <div id="login" class="tab-content">
-            <div class="card">
-                <div class="card-header">
-                    <h2 class="card-title">Login &amp; Security</h2>
-                    <p class="card-description">Manage your password and login settings.</p>
-                </div>
-                <div class="card-content">
-                    <form>
-                        <div class="form-group">
-                            <label for="current-password">Current Password</label>
-                            <input type="password" id="current-password">
-                        </div>
-                        <div class="form-group">
-                            <label for="new-password">New Password</label>
-                            <input type="password" id="new-password">
-                        </div>
-                        <div class="form-group">
-                            <label for="confirm-password">Confirm New Password</label>
-                            <input type="password" id="confirm-password">
-                        </div>
-                        <button type="submit" class="btn">Update Password</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-        <div id="email" class="tab-content">
-            <div class="card">
-                <div class="card-header">
-                    <h2 class="card-title">Email Settings</h2>
-                    <p class="card-description">Manage your email and notification preferences.</p>
-                </div>
-                <div class="card-content">
-                    <form>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" placeholder="johndoe@example.com">
-                        </div>
-                        <div class="form-group">
-                            <label>Notification Preferences</label>
-                            <div>
-                                <label class="switch">
-                                    <input type="checkbox" id="study-reminders">
-                                    <span class="slider"></span>
-                                </label>
-                                <span style="margin-left: 0.5rem;">Study Reminders</span>
-                            </div>
-                            <div style="margin-top: 0.5rem;">
-                                <label class="switch">
-                                    <input type="checkbox" id="new-content">
-                                    <span class="slider"></span>
-                                </label>
-                                <span style="margin-left: 0.5rem;">New Content Alerts</span>
-                            </div>
-                            <div style="margin-top: 0.5rem;">
-                                <label class="switch">
-                                    <input type="checkbox" id="child-activity">
-                                    <span class="slider"></span>
-                                </label>
-                                <span style="margin-left: 0.5rem;">Child Activity Updates</span>
-                            </div>
-                        </div>
-                        <button type="submit" class="btn">Save Preferences</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-        <div id="linked" class="tab-content">
-            <div class="card">
-                <div class="card-header">
-                    <h2 class="card-title">Linked Students</h2>
-                    <p class="card-description">Manage your children's accounts linked to your parent account.</p>
-                </div>
-                <div class="card-content">
-                    <div class="linked-account">
-                        <span>Sarah Doe (sarahdoe@example.com)</span>
-                        <button class="btn" style="background-color: transparent; color: #2563eb; border: 1px solid #2563eb;">Remove</button>
-                    </div>
-                    <div class="linked-account">
-                        <span>Mike Doe (mikedoe@example.com)</span>
-                        <button class="btn" style="background-color: transparent; color: #2563eb; border: 1px solid #2563eb;">Remove</button>
-                    </div>
-                    <div style="margin-top: 1rem;">
-                        <label for="add-student">Add a Student</label>
-                        <div style="display: flex; margin-top: 0.5rem;">
-                            <input type="email" id="add-student" placeholder="Student's email" style="flex-grow: 1; margin-right: 0.5rem;">
-                            <button class="btn">Add</button>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
     </main>
 
     <script>
-        // Simple tab functionality
+        // Tab functionality
         document.querySelectorAll('.tab').forEach(tab => {
             tab.addEventListener('click', () => {
                 document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
@@ -354,10 +284,98 @@
 
         // Toggle account type
         const accountTypeSwitch = document.getElementById('account-type');
-        const accountTypeLabel = accountTypeSwitch.nextElementSibling.nextElementSibling;
+        const accountTypeLabel = document.getElementById('account-type-label');
         accountTypeSwitch.addEventListener('change', () => {
             accountTypeLabel.textContent = accountTypeSwitch.checked ? 'Parent Account' : 'Student Account';
             document.querySelector('.tab[data-tab="linked"]').textContent = accountTypeSwitch.checked ? 'Linked Students' : 'Linked Parents';
+        });
+
+        // Form validation and submission
+        const form = document.getElementById('personal-info-form');
+        const formMessage = document.getElementById('form-submission-message');
+        const inputs = form.querySelectorAll('input[required]');
+
+        // Show error messages
+        function showError(input, message) {
+            const errorElement = input.nextElementSibling;
+            errorElement.textContent = message;
+            errorElement.style.display = 'block';
+            input.classList.add('invalid');
+        }
+
+        // Clear error messages
+        function clearError(input) {
+            const errorElement = input.nextElementSibling;
+            errorElement.textContent = '';
+            errorElement.style.display = 'none';
+            input.classList.remove('invalid');
+        }
+
+        // Validate individual input
+        function validateInput(input) {
+            if (input.validity.valueMissing) {
+                showError(input, 'This field is required');
+                return false;
+            }
+            
+            if (input.validity.tooShort) {
+                showError(input, `Minimum length is ${input.minLength} characters`);
+                return false;
+            }
+            
+            if (input.validity.patternMismatch) {
+                showError(input, 'Please enter a valid phone number');
+                return false;
+            }
+            
+            clearError(input);
+            return true;
+        }
+
+        // Add event listeners for live validation
+        inputs.forEach(input => {
+            input.addEventListener('input', () => validateInput(input));
+            input.addEventListener('blur', () => validateInput(input));
+        });
+
+        // Form submission
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            
+            // Validate all inputs
+            let isValid = true;
+            inputs.forEach(input => {
+                if (!validateInput(input)) {
+                    isValid = false;
+                }
+            });
+            
+            // If form is valid, submit to Google Sheets
+            if (isValid) {
+                const submitButton = form.querySelector('button[type="submit"]');
+                submitButton.disabled = true;
+                submitButton.textContent = 'Submitting...';
+                
+                const scriptURL = 'https://script.google.com/macros/s/AKfycbx9AzinfWtzTwS6s5JUB3GPX86xlj1u_b3QCsczTqZ18dTw-72KeKoFuTVjxFlEJ2EL/exec';
+                
+                fetch(scriptURL, { 
+                    method: 'POST', 
+                    body: new FormData(form)
+                })
+                .then(response => {
+                    formMessage.textContent = 'Form submitted successfully!';
+                    formMessage.className = 'form-message success';
+                    form.reset();
+                })
+                .catch(error => {
+                    formMessage.textContent = 'Error submitting form. Please try again.';
+                    formMessage.className = 'form-message error';
+                })
+                .finally(() => {
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Submit';
+                });
+            }
         });
     </script>
 </body>
